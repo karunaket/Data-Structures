@@ -1,16 +1,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure of a node in the linked list
 struct Node {
   int data;
   struct Node* next;
 };
 
+/*
+The data member is an integer that stores the value of the node. This value can be any integer value, and is typically used to store some kind of data associated with the node. For example, if we were using a linked list to represent a sequence of numbers, the data member would store the value of each number in the sequence.
+
+The next member is a pointer to another Node struct, which represents the next node in the linked list. This pointer allows us to traverse the linked list by following the next pointers from one node to the next. The next pointer of the last node in the list is typically set to NULL, indicating the end of the list.
+*/
+
+
 // Function to insert a node at the beginning of the linked list
 void insertAtBeginning(struct Node** head_ref, int new_data) {
   // Allocate memory for the new node
   struct Node* new_node = (struct Node*)malloc(sizeof(struct Node));
+
+  /*
+
+The active selection is a line of code from a C program that allocates memory for a new Node struct using the malloc function. The line of code is part of a function that inserts a new node at the beginning of a singly linked list.
+
+The malloc function is used to dynamically allocate memory for the new node. The sizeof operator is used to determine the size of the Node struct, which is passed as an argument to malloc. The malloc function returns a pointer to the allocated memory, which is then cast to a pointer to a Node struct using the (struct Node*) syntax.
+
+The resulting pointer is stored in a variable called new_node, which is of type struct Node*. This pointer can then be used to access the members of the new node, such as the data member and the next pointer.
+
+  */
+
   // Set the data of the new node
   new_node->data = new_data;
   // Set the next pointer of the new node to the current head of the list
